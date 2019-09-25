@@ -60,10 +60,10 @@ Public Class frmAddEditStudents
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         DBConnection()
-        saveRec()
+        SaveRec()
     End Sub
 
-    Function saveRec()
+    Function SaveRec()
         If txtStudentID.Text <> "" Or txtFirstName.Text <> "" Or txtMiddleName.Text <> "" Or txtLastName.Text <> "" Then
             If AEswitch = "a" Then
                 QueryExec("INSERT INTO tblStudents VALUES ('" & txtStudentID.Text & "','" & txtFirstName.Text & "','" & txtMiddleName.Text & "','" & txtLastName.Text & "','" & cboDept.Text & "','" & cboCourse.Text & "')", Me)
