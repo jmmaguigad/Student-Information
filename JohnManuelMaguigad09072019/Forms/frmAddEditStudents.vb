@@ -66,13 +66,13 @@ Public Class frmAddEditStudents
     Function saveRec()
         If txtStudentID.Text <> "" Or txtFirstName.Text <> "" Or txtMiddleName.Text <> "" Or txtLastName.Text <> "" Then
             If AEswitch = "a" Then
-                AddEditData("INSERT INTO tblStudents VALUES ('" & txtStudentID.Text & "','" & txtFirstName.Text & "','" & txtMiddleName.Text & "','" & txtLastName.Text & "','" & cboDept.Text & "','" & cboCourse.Text & "')", Me)
+                QueryExec("INSERT INTO tblStudents VALUES ('" & txtStudentID.Text & "','" & txtFirstName.Text & "','" & txtMiddleName.Text & "','" & txtLastName.Text & "','" & cboDept.Text & "','" & cboCourse.Text & "')", Me)
                 'Com = New OleDbCommand("INSERT INTO tblStudents VALUES ('" & txtStudentID.Text & "','" & txtFirstName.Text & "','" & txtMiddleName.Text & "','" & txtLastName.Text & "','" & cboDept.Text & "','" & cboCourse.Text & "')", Con)
                 'Com.ExecuteNonQuery()
                 'MsgBox("Successfully saved")
                 'Me.Close()
             ElseIf AEswitch = "e" Then
-                AddEditData("UPDATE tblStudents SET FirstName='" & txtFirstName.Text & "',MiddleName='" & txtMiddleName.Text & "',LastName='" & txtLastName.Text & "',deptCode='" & cboDept.Text & "',cCode='" & cboCourse.Text & "' WHERE studID='" & studSelectedInfo & "'", Me)
+                QueryExec("UPDATE tblStudents SET FirstName='" & txtFirstName.Text & "',MiddleName='" & txtMiddleName.Text & "',LastName='" & txtLastName.Text & "',deptCode='" & cboDept.Text & "',cCode='" & cboCourse.Text & "' WHERE studID='" & studSelectedInfo & "'", Me)
                 'Com = New OleDbCommand("UPDATE tblStudents SET FirstName='" & txtFirstName.Text & "',MiddleName='" & txtMiddleName.Text & "',LastName='" & txtLastName.Text & "',deptCode='" & cboDept.Text & "',cCode='" & cboCourse.Text & "' WHERE studID='" & studSelectedInfo & "'", Con)
                 'Com.ExecuteNonQuery()
                 'MsgBox("Successfully saved")

@@ -24,7 +24,7 @@ Module modProcedure
         End Try
     End Sub
 
-    Public Sub AddEditData(ByVal dataSQL As String, subjectForm As Form)
+    Public Sub QueryExec(ByVal dataSQL As String, subjectForm As Form)
         Dim CN As OleDbConnection
         CN = New OleDbConnection
         Dim sqlCmd As OleDbCommand = New OleDbCommand(dataSQL, CN)
